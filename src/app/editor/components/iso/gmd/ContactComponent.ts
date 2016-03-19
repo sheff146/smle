@@ -2,7 +2,7 @@
 import { Component } from 'angular2/core';
 import { Contact } from '../../../../model/iso/gmd/Contact';
 import { AbstractComponent }  from '../../AbstractEditorComponent';
-import { AddressComponent } from './AddressComponent';
+import { AddressComponentNew } from './AddressComponentNew';
 import { PhoneComponent } from './PhoneComponent';
 import { OnlineResourceComponent } from './OnlineResourceComponent';
 import { CardHeaderComponent } from '../../CardHeaderComponent';
@@ -10,7 +10,7 @@ import { CardHeaderComponent } from '../../CardHeaderComponent';
 @Component({
   selector: 'isoContact',
   template: require('./ContactComponent.html'),
-  directives: [CardHeaderComponent, AddressComponent, PhoneComponent, OnlineResourceComponent]
+  directives: [CardHeaderComponent, AddressComponentNew, PhoneComponent, OnlineResourceComponent]
 })
 export class ContactComponent extends AbstractComponent<Contact> {
   protected createModel(): Contact {
