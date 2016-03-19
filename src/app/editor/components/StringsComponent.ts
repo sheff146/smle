@@ -13,7 +13,7 @@ import { Control, ControlArray, FormBuilder } from 'angular2/common';
         </button>
       </li>
       <li class="list-group-item">
-        <input type="{{type}}" class="form-control" [(ngModel)]="item" (keyup.enter)="add()">
+        <input type="{{type}}" class="form-control" [(ngModel)]="item" (keyup.enter)="add()" (keyup.escape)="clear()">
         <button type="button" class="btn btn-link" (click)="add()">
           <i class="fa fa-fw fa-plus-circle"></i> Add
         </button>
