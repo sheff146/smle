@@ -13,7 +13,7 @@ import { Control, ControlArray, FormBuilder } from 'angular2/common';
         </button>
       </li>
       <li class="list-group-item">
-        <input type="text" class="form-control" [(ngModel)]="item">
+        <input type="{{type}}" class="form-control" [(ngModel)]="item" (keyup.enter)="add()">
         <button type="button" class="btn btn-link" (click)="add()">
           <i class="fa fa-fw fa-plus-circle"></i> Add
         </button>
@@ -27,6 +27,9 @@ import { Control, ControlArray, FormBuilder } from 'angular2/common';
 export class StringsComponent {
   @Input()
   public list: string[];
+  @Input()
+  public type: string = 'text';
+  
   public item: string;
 
   public remove(i: number): void {
