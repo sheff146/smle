@@ -8,16 +8,16 @@ import { Control, ControlArray, FormBuilder } from 'angular2/common';
     <ul class="list-group">
       <li *ngFor="#item of list; #i = index" class="list-group-item">
         {{item}}
-        <button type="button" class="btn btn-link" (click)="remove(i)">
+        <button type="button" class="btn btn-link" (click)="remove(i)" [disabled]="disabled">
           <i class="fa fa-minus-circle"></i>
         </button>
       </li>
       <li class="list-group-item">
-        <input type="{{type}}" class="form-control" [(ngModel)]="item" (keyup.enter)="add()" (keyup.escape)="clear()">
-        <button type="button" class="btn btn-link" (click)="add()">
+        <input type="{{type}}" class="form-control" [(ngModel)]="item" (keyup.enter)="add()" (keyup.escape)="clear()" [disabled]="disabled">
+        <button type="button" class="btn btn-link" (click)="add()" [disabled]="disabled">
           <i class="fa fa-fw fa-plus-circle"></i> Add
         </button>
-        <button type="button" class="btn btn-link" (click)="clear()">
+        <button type="button" class="btn btn-link" (click)="clear()" [disabled]="disabled">
           <i class="fa fa-fw fa-undo"></i> Clear
         </button>
       </li>
@@ -29,6 +29,8 @@ export class StringsComponent {
   public list: string[];
   @Input()
   public type: string = 'text';
+  @Input()
+  public disabled: boolean = false;
   
   public item: string;
 
